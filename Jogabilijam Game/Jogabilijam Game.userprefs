@@ -2,16 +2,9 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CarControllerMinimal.cs">
     <Files>
-      <File FileName="Assets\Scripts\CarControllerMinimal.cs" Line="46" Column="28" />
+      <File FileName="Assets\Scripts\CarControllerMinimal.cs" Line="43" Column="40" />
       <File FileName="Assets\Scripts\CameraController.cs" Line="1" Column="1" />
     </Files>
-    <Pads>
-      <Pad Id="MonoDevelop.NUnit.TestPad">
-        <State name="__root__">
-          <Node name="Jogabilijam Game" expanded="True" selected="True" />
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

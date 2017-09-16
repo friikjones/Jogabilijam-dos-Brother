@@ -10,7 +10,8 @@ public class CarControllerMinimal : MonoBehaviour {
 	private Vector3 v3Left;
 	private Vector3 v3Right;
 
-	public int translateScale;
+	public int accellScale;
+	public int reverseScale;
 	public int rotateScale;
 
 
@@ -35,11 +36,11 @@ public class CarControllerMinimal : MonoBehaviour {
 	{
 		if (Input.GetKey(KeyCode.W))
 		{
-			rb.AddRelativeForce(v3Front * translateScale);
+			rb.AddRelativeForce(v3Front * accellScale);
 		}
 		if (Input.GetKey(KeyCode.S))
 		{
-			rb.AddRelativeForce(v3Back * translateScale);
+			rb.AddRelativeForce(v3Back * reverseScale);
 		}
 		if (Input.GetKey(KeyCode.A))
 		{
