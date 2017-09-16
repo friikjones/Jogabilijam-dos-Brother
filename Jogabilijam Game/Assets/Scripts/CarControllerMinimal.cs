@@ -43,11 +43,11 @@ public class CarControllerMinimal : MonoBehaviour {
 		}
 		if (Input.GetKey(KeyCode.A))
 		{
-			transform.Rotate (v3Right * Time.deltaTime * rotateScale);
+			transform.Rotate (v3Left * Time.deltaTime * rotateScale);
 		}
 		if (Input.GetKey(KeyCode.D))
 		{
-			transform.Rotate (v3Left * Time.deltaTime * rotateScale);
+			transform.Rotate (v3Right * Time.deltaTime * rotateScale);
 		}
 
 	}
