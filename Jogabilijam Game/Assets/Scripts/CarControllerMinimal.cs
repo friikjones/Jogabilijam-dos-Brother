@@ -13,7 +13,7 @@ public class CarControllerMinimal : MonoBehaviour {
 	public int accellScale;
 	public int reverseScale;
 	public int rotateScale;
-
+    public bool flagLEFT;
 
 	// Use this for initialization
 	void Start () 
@@ -42,13 +42,18 @@ public class CarControllerMinimal : MonoBehaviour {
 		{
 			rb.AddRelativeForce(v3Back * reverseScale);
 		}
-		if (Input.GetKey(KeyCode.A))
-		{
-			transform.Rotate (v3Left * Time.deltaTime * rotateScale);
-		}
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.Rotate(v3Left * Time.deltaTime * rotateScale);
+            flagLEFT = true;
+        }
+        else {
+            flagLEFT = false;
+}
 		if (Input.GetKey(KeyCode.D))
 		{
-			transform.Rotate (v3Right * Time.deltaTime * rotateScale);
+       	        transform.Rotate (v3Right * Time.deltaTime * rotateScale);
+               
 		}
 
 	}
