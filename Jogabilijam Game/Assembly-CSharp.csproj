@@ -46,8 +46,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\PhatRobit\2.5D Sprite Rotation\Scripts\CameraController.cs" />
+     <Compile Include="Assets\PhatRobit\2.5D Sprite Rotation\Scripts\CameraDirection.cs" />
+     <Compile Include="Assets\PhatRobit\2.5D Sprite Rotation\Scripts\Enums.cs" />
+     <Compile Include="Assets\PhatRobit\2.5D Sprite Rotation\Scripts\FpsCameraDirection.cs" />
+     <Compile Include="Assets\PhatRobit\2.5D Sprite Rotation\Scripts\RobitTools.cs" />
+     <Compile Include="Assets\PhatRobit\2.5D Sprite Rotation\Scripts\SpriteBillboard.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\CarControllerMinimal.cs" />
+     <Compile Include="Assets\Scripts\GateManagerScript.cs" />
+     <Compile Include="Assets\Scripts\GateScript.cs" />
+     <Compile Include="Assets\Scripts\Sprites.cs" />
+     <None Include="Assets\PhatRobit\2.5D Sprite Rotation\Documentation\ReadMe.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

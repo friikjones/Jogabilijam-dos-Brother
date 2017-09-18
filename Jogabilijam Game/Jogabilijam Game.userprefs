@@ -1,10 +1,19 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CarControllerMinimal.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GateManagerScript.cs">
     <Files>
-      <File FileName="Assets\Scripts\CarControllerMinimal.cs" Line="43" Column="40" />
+      <File FileName="Assets\Scripts\CarControllerMinimal.cs" Line="43" Column="1" />
       <File FileName="Assets\Scripts\CameraController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GateScript.cs" Line="21" Column="3" />
+      <File FileName="Assets\Scripts\GateManagerScript.cs" Line="19" Column="24" />
     </Files>
+    <Pads>
+      <Pad Id="MonoDevelop.NUnit.TestPad">
+        <State name="__root__">
+          <Node name="Jogabilijam Game" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
