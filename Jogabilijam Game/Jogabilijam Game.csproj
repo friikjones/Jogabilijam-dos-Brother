@@ -86,7 +86,6 @@
     <Compile Include="Assets\PhatRobit\2.5D Sprite Rotation\Scripts\SpriteBillboard.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\CarControllerMinimal.cs" />
-    <Compile Include="Assets\Scripts\ObservadorTrigger.cs" />
     <Compile Include="Assets\Scripts\Sprites.cs" />
   </ItemGroup>
   <ItemGroup>
