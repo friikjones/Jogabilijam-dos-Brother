@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Mockup.unity
+- path: Assets/Scenes/CharSelect.unity
   isLoaded: 1
   isActive: 1
