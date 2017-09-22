@@ -2,15 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sprites : MonoBehaviour
+
+public class Sprites : Controller
 {
 
     public Sprite spUp, spDown, spLeft, spRight, spHoldRight, spSuperHoldRight, spHoldLeft, spSuperHoldLeft;
-    private int driftL, driftR;
+    
 
 
 
-    // Use this for initialization
+
+    public override void ReadInput(InputData data) {
+
+        if (data.axes[1] == -1)
+        {
+            this.GetComponent<SpriteRenderer>().sprite = spRight;
+        }
+
+
+
+    }
+}
+
+    /* // Use this for initialization
     void Start()
     {
 
@@ -20,20 +34,31 @@ public class Sprites : MonoBehaviour
     }
 
 
-
+    
 
     // Update is called once per frame
-    void Update()
+    
+        
+        
+        
+        
+        void Update()
     {
 
-        if (Input.GetKey(KeyCode.W))
-            this.GetComponent<SpriteRenderer>().sprite = spUp;
-
-        if (Input.GetKey(KeyCode.S))
-            this.GetComponent<SpriteRenderer>().sprite = spDown;
-
+        if (data.axes[1] != 0)
+        {
+            this.GetComponent<SpriteRenderer>().sprite = spRight;
+        }
 
 
+
+
+
+
+
+
+
+        
         if (Input.GetKey(KeyCode.A))
         {
 
@@ -86,4 +111,16 @@ public class Sprites : MonoBehaviour
 
 
     }
-}
+}*/
+
+
+        
+        
+        
+        
+        
+        
+        
+        
+       
+       
