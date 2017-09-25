@@ -19,7 +19,7 @@ public class CarControllerMinimal : MonoBehaviour
     public int rotateScale;
     public int boost = 1;
     private int driftR, driftL;
-    private float gravidade=14f;
+    public float gravidade=14f;
 
     
 
@@ -46,7 +46,14 @@ public class CarControllerMinimal : MonoBehaviour
         MovementControl();
     }
 
-    void MovementControl()
+    void FixedUpdate()
+    {
+        rb.AddForce(Vector3.down * gravidade * rb.mass);
+
+    }
+
+
+        void MovementControl()
     {
         //PULO///////
        /* if (Input.GetKeyDown(KeyCode.Space))
