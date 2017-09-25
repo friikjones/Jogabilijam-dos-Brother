@@ -70,6 +70,8 @@
      <Compile Include="Assets\Scripts Gui\View Scripts\FacingSphere.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\CarControllerMinimal.cs" />
+     <Compile Include="Assets\Scripts\CharSelectDTOScript.cs" />
+     <Compile Include="Assets\Scripts\CharSelectInfo.cs" />
      <Compile Include="Assets\Scripts\GateManagerScript.cs" />
      <Compile Include="Assets\Scripts\GateScript.cs" />
      <Compile Include="Assets\Scripts\LapSystem.cs" />
