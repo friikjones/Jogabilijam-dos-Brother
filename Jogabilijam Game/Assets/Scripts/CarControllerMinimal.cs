@@ -13,13 +13,21 @@ public class CarControllerMinimal : MonoBehaviour
     private Vector3 v3Left;
     private Vector3 v3Right;
     private Vector3 v3Up;
+	private Vector3 v3Horizontal;
 
     public int accellScale;
     public int reverseScale;
     public int rotateScale;
     public int boost = 1;
     private int driftR, driftL;
-    private float gravidade=14f;
+    public float gravidade=14f;
+	public string accelAxis = "Accel_P1";
+	public string turnAxis = "Horizontal_P1";
+	public string turnRButton = "TurnR_P1";
+	public string turnLButton = "TurnL_P1";
+
+	private float horizontalValue;
+	private float verticalValue;
 
     
 
@@ -36,6 +44,7 @@ public class CarControllerMinimal : MonoBehaviour
         v3Left = new Vector3(0, -1, 0);
         v3Right = new Vector3(0, 1, 0);
         v3Up = new Vector3(0, 1, 0);
+		v3Horizontal = new Vector3(0, 1, 0);
         
     }
 
@@ -46,7 +55,14 @@ public class CarControllerMinimal : MonoBehaviour
         MovementControl();
     }
 
-    void MovementControl()
+    void FixedUpdate()
+    {
+        rb.AddForce(Vector3.down * gravidade * rb.mass);
+
+    }
+
+
+        void MovementControl()
     {
         //PULO///////
        /* if (Input.GetKeyDown(KeyCode.Space))
@@ -59,19 +75,24 @@ public class CarControllerMinimal : MonoBehaviour
         }
         */
 
-        if (Input.GetKey(KeyCode.W))
-        {
-            rb.AddRelativeForce(v3Front * accellScale * boost);
-        }
+//        if (Input.GetKey(KeyCode.W))
+//        {
+//            rb.AddRelativeForce(v3Front * accellScale * boost);
+//        }
+//
+//        if (Input.GetKey(KeyCode.S))
+//        {
+//            rb.AddRelativeForce(v3Back * reverseScale);
+//        }
 
-        if (Input.GetKey(KeyCode.S))
-        {
-            rb.AddRelativeForce(v3Back * reverseScale);
-        }
+		verticalValue = Input.GetAxis (accelAxis);
 
+		if(verticalValue>0)
+			rb.AddRelativeForce(v3Front * accellScale * boost);
+		if (verticalValue<0)
+			rb.AddRelativeForce(v3Back * reverseScale);
 
-
-        if (Input.GetKey(KeyCode.A))
+		if (Input.GetButton(turnLButton))
         {
 
             transform.Rotate(v3Left * Time.deltaTime * rotateScale);
@@ -93,12 +114,12 @@ public class CarControllerMinimal : MonoBehaviour
         {
             driftL = 0;
         }
-
+			
 
     
 
 
-        if (Input.GetKey(KeyCode.D))
+		if (Input.GetButton(turnRButton))
         {
             transform.Rotate(v3Right * Time.deltaTime * rotateScale);
 
@@ -120,17 +141,6 @@ public class CarControllerMinimal : MonoBehaviour
         {
             driftR = 0;
         }
-
-
-
-
-
-
-
-
-
-
-
 
 
 

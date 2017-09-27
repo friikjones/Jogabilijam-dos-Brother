@@ -1,16 +1,18 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CarControllerMinimal.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GateManagerScript.cs">
     <Files>
-      <File FileName="Assets\Scripts\CarControllerMinimal.cs" Line="63" Column="10" />
+      <File FileName="Assets\Scripts\CarControllerMinimal.cs" Line="115" Column="24" />
       <File FileName="Assets\Scripts\CameraController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts Gui\Input Script\InputManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\CharSelectDTOScript.cs" Line="25" Column="3" />
-      <File FileName="Assets\Scripts Gui\Model Scripts\Vehicle Controls\VehicleController.cs" Line="16" Column="2" />
+      <File FileName="Assets\Scripts\GateScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GateManagerScript.cs" Line="121" Column="3" />
+      <File FileName="Assets\Scripts Gui\Model Scripts\Vehicle Controls\VehicleController.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Catchpoint exceptionName="System.ArgumentOutOfRangeException" includeSubclasses="True" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

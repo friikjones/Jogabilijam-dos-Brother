@@ -75,6 +75,7 @@
      <Compile Include="Assets\Scripts\GateManagerScript.cs" />
      <Compile Include="Assets\Scripts\GateScript.cs" />
      <Compile Include="Assets\Scripts\LapSystem.cs" />
+     <Compile Include="Assets\Scripts\PositioningControllerScript.cs" />
      <Compile Include="Assets\Scripts\Ranking.cs" />
      <Compile Include="Assets\Scripts\Sprites.cs" />
      <None Include="Assets\PhatRobit\2.5D Sprite Rotation\Documentation\ReadMe.txt" />

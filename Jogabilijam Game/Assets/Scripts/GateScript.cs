@@ -5,13 +5,14 @@ using UnityEngine;
 public class GateScript : MonoBehaviour {
 
 	public int GateNumber;
-	public bool Atravessado;
+	public bool[] Atravessado;
 
 	// Use this for initialization
 	void Start () 
 	{
-		
-		Atravessado = false;
+		Atravessado = new bool[4];
+		for(int i=0;i<4;i++)
+			Atravessado[i] = false;
 
 	}
 
@@ -23,9 +24,26 @@ public class GateScript : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other)
 	{
-		if (other.tag == "Player") 
+//		if (other.tag == "P1") 
+//		{
+//			Atravessado[0] = true;
+//		}
+		switch (other.tag)
 		{
-			Atravessado = true;
+		case "P1":
+			Atravessado[0] = true;
+			break;
+		case "P2":
+			Atravessado[1] = true;
+			break;
+		case "P3":
+			Atravessado[2] = true;
+			break;
+		case "P4":
+			Atravessado[3] = true;
+			break;
+		default:
+			break;
 		}
 
 	}

@@ -18,6 +18,7 @@ public class CharSelectDTOScript : MonoBehaviour {
 
 	public void setIndex(int i){
 		index = i;
+		Debug.Log ("index = " + index);
 	}
 
 	public int getIndex(){
