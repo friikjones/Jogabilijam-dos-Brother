@@ -7,6 +7,8 @@ using System;
 
 public class GateManagerScript : MonoBehaviour {
 
+	private const int maxPlayers = 4;
+
 	public int Gates;
 
 	public Text positionsText;
@@ -27,13 +29,14 @@ public class GateManagerScript : MonoBehaviour {
 	{
 		Gates = transform.childCount;
 		DefineGateNumbers ();
-		CurrentGate = new int[4];
-		Laps = new int[4];
-		CurrentOrder = new int[4];
-		totalGatesCrossed = new int[4];
-		distances = new float[4];
-		positions = new List<int>{ 0, 1, 2, 3 };
-		for (int i = 0; i < 4; i++) {
+		CurrentGate = new int[maxPlayers];
+		Laps = new int[maxPlayers];
+		CurrentOrder = new int[maxPlayers];
+		totalGatesCrossed = new int[maxPlayers];
+		distances = new float[maxPlayers];
+		positions = new List<int>();
+		for (int i = 0; i < maxPlayers; i++) {
+			positions.Add (i);
 			CurrentGate[i] = -1;
 			Laps[i] = 0;
 			CurrentOrder [i] = i;
@@ -46,20 +49,18 @@ public class GateManagerScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		CheckForGates ();
-		CheckForLaps ();
-		updatePositionsText();
-		distances = CalculateDistanceNextGate();
+		CheckForGates (); //confere se alguém atravessou um gate e qual
+		CheckForLaps ();  //confere se alguém completou uma volta e contabiliza isso
+		updatePositionsText(); //atualiza o texto com as posições na tela
+		distances = CalculateDistanceNextGate(); // calcula a distancia de cada jogador ao seu proximo gate
 	}
 
 	void FixedUpdate(){
-		CurrentOrder = GetPositions();
-		sortList ();
+		CurrentOrder = GetPositions(); // calcula a posição de cada jogador e salva isso no array CurrentOrder
 	}
 
-	void DefineGateNumbers()
+	void DefineGateNumbers() // da a cada gate o seu numero correto
 	{
-
 		for (int i =0; i<Gates;i++)
 		{
 			//Child = Transform.GetChild (i);
@@ -72,7 +73,7 @@ public class GateManagerScript : MonoBehaviour {
 
 	void CheckForGates()
 	{
-		for (int j = 0; j < 4; j++) {
+		for (int j = 0; j < maxPlayers; j++) {
 			//Para cada jogador
 			for (int i = 0; i < Gates; i++) {
 				//Child = Transform.GetChild (i);
@@ -93,7 +94,7 @@ public class GateManagerScript : MonoBehaviour {
 
 	void CheckForLaps()
 	{
-		for (int j = 0; j < 4; j++) {
+		for (int j = 0; j < maxPlayers; j++) {
 			if (CurrentGate[j] == Gates) {
 				Laps[j]++;
 				CurrentGate[j] = 0;
@@ -101,110 +102,47 @@ public class GateManagerScript : MonoBehaviour {
 		}
 	}
 
-	int[] CheckPositions(){
-		int[] positions = new int[4];
-		int first = 0;
-		List<int> auxList = new List<int> ();
-		for (int i = 0; i < 4; i++) {
-				auxList.Add (i);
-		}
-		while (auxList.Count != 1) {
-			//first = auxList.ElementAt (0);
-			first = 0;
-			for (int i = 1; i < auxList.Count; i++) {
-//				Debug.Log ("first, i =" + first + " " + i);
-//				Debug.Log ("auxList.Count = " + auxList.Count);
-				if (isInFront (auxList[i], auxList[first]))
-					first = i;
-			}
-			auxList.RemoveAt(first);
-			positions[first]=3-auxList.Count;
-		}
-		positions [auxList[0]] = 3;
-
-
-		return positions;
-
-	}
-
-	int [] GetPositions()
-	{
-		//positions.Sort( (a, b) => { return isInFront(a, b) ? 1 : -1; } );
-//		Debug.Log ("sorted positions: 0 = " + positions [0] + "; 1 = " + positions [1] + "; 2 = " + positions [2] + "; 3 = " + positions [3]);
-		return positions.ToArray();
-	}
-
 	float[] CalculateDistanceNextGate(){
-		GameObject[] players = new GameObject[4];
-		float[] distances = new float[4];
-		for (int i = 0; i < 4; i++) {
+		GameObject[] players = new GameObject[maxPlayers];
+		float[] distances = new float[maxPlayers];
+		for (int i = 0; i < maxPlayers; i++) {
 			players [i] = GameObject.FindGameObjectWithTag ("P" + (i+1).ToString ());
 		}
-		for (int i = 0; i < 4; i++) {//maximo esta 1 por enquanto porque não coloquei com varios jogadores
+		for (int i = 0; i < maxPlayers; i++) {
 			Vector3 playerPosition = players[i].transform.position;
 			Vector3 gatePosition = this.gameObject.transform.GetChild (NextGate(CurrentGate [i])).transform.position;
 			distances [i] = Vector3.Distance (playerPosition, gatePosition);
 		}
-//		string aux = "";
-//		for (int i = 0; i < 4; i++)
-//			aux += distances [i].ToString () + " "; 
-//		Debug.Log ("distances = " + aux);
 		return distances;
 	}
 
-	int NextGate(int currentGate){
-		if (currentGate + 1 == Gates)
+	int NextGate(int currentGate){ // verifica qual o gate seguinte dado o gate atual
+		if (currentGate + 1 == Gates) //caso seja o ultimo, o proximo é o primeiro
 			return 0;
 		else
-			return currentGate + 1;
-	}
-
-	bool isInFront(int first, int second){//recebe indice dos jogadores a verificar
-		//quem tem mais gates
-//		Debug.Log("first, second = " + first + " " + second);
-//		Debug.Log ("totalGatesCrossed for each = " + totalGatesCrossed [first] + " " + totalGatesCrossed [second]);
-		if (first == second)
-			return false;
-//		if (totalGatesCrossed [first] != totalGatesCrossed [second]) {
-//			Debug.Log ("num of crossed gates is different");
-//			Debug.Log ("gatesCrossed for each = " + totalGatesCrossed [first] + " " + totalGatesCrossed [second]);
-			if (totalGatesCrossed [first] > totalGatesCrossed [second]) {
-//				Debug.Log (first + " crossed more gates than " + second);
-				return true;
-			} else {
-//				Debug.Log (second + " crossed more gates than " + first);
-				return false;
-			}
-//		} else { //se os gates estao iguais, checa distancia
-//			if (distances [first] >= distances [second]) {
-////				Debug.Log (second + " is in front of " + first);
-//				return false;
-//			}
-//			else {
-////				Debug.Log (first + " is in front of " + second);
-//				return true;
-//			}
-//		}
+			return currentGate + 1; // em todos os outros casos, é o seguinte
 	}
 
 	private void updatePositionsText(){
 		string aux = "Posicoes: ";
-		for (int i = 0; i < 4; i++) {
+		for (int i = 0; i < maxPlayers; i++) {
 			aux += i + " = " + CurrentOrder [i].ToString () + "; ";
 		}
 		positionsText.text = aux;
 	}
 
-	private void sortList(){
-		List<int> aux = new List<int>{ totalGatesCrossed[0], totalGatesCrossed[1], totalGatesCrossed[2], totalGatesCrossed[3] };
-		int currentMax = 0;
-		for (int i = 0; i < 4; i++) {
-			currentMax = aux.Max ();
-			positions [aux.IndexOf (currentMax)] = i;
-			aux [aux.IndexOf (currentMax)] = -1;
+	private int[] GetPositions(){
+		List<float> totalDistanceTravelled = new List<float>(); //cria lista de distancia total que cada jogador andou
+		for(int i=0;i<maxPlayers;i++){
+			totalDistanceTravelled.Add(totalGatesCrossed[i]*200+100-distances[i]);  // soma a distancia desde o ultimo gate (aproximada)
+		}																			// à distancia acumulada com os outros gates
+		float currentMax = 0;
+		for (int i = 0; i < maxPlayers; i++) { //ordena os jogadores baseado nessa distancia total
+			currentMax = totalDistanceTravelled.Max ();
+			positions [totalDistanceTravelled.IndexOf (currentMax)] = i;
+			totalDistanceTravelled [totalDistanceTravelled.IndexOf (currentMax)] = -1;
 		}
-		Debug.Log ("sorted positions: 0 = " + positions [0] + "; 1 = " + positions [1] + "; 2 = " + positions [2] + "; 3 = " + positions [3]);
-//		return positions.ToArray ();
+		return positions.ToArray ();
 	}
 
 
