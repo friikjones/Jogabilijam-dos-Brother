@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using UnityEngine.UI;
+using System;
 
 public class GateManagerScript : MonoBehaviour {
 
@@ -15,6 +16,7 @@ public class GateManagerScript : MonoBehaviour {
 	private int[] CurrentOrder;
 	private int[] totalGatesCrossed;
 	private float[] distances;
+	List<int> positions;
 
 
 	private Transform Child;
@@ -30,8 +32,9 @@ public class GateManagerScript : MonoBehaviour {
 		CurrentOrder = new int[4];
 		totalGatesCrossed = new int[4];
 		distances = new float[4];
+		positions = new List<int>{ 0, 1, 2, 3 };
 		for (int i = 0; i < 4; i++) {
-			CurrentGate[i] = 0;
+			CurrentGate[i] = -1;
 			Laps[i] = 0;
 			CurrentOrder [i] = i;
 			totalGatesCrossed [i] = 0;
@@ -45,13 +48,13 @@ public class GateManagerScript : MonoBehaviour {
 	{
 		CheckForGates ();
 		CheckForLaps ();
-		//Debug.Log ("totalGatesCrossed[0] = " + totalGatesCrossed [0]);
 		updatePositionsText();
+		distances = CalculateDistanceNextGate();
 	}
 
-	void LateUpdate(){
-		distances = CalculateDistanceNextGate();
+	void FixedUpdate(){
 		CurrentOrder = GetPositions();
+		sortList ();
 	}
 
 	void DefineGateNumbers()
@@ -109,8 +112,8 @@ public class GateManagerScript : MonoBehaviour {
 			//first = auxList.ElementAt (0);
 			first = 0;
 			for (int i = 1; i < auxList.Count; i++) {
-				Debug.Log ("first, i =" + first + " " + i);
-				Debug.Log ("auxList.Count = " + auxList.Count);
+//				Debug.Log ("first, i =" + first + " " + i);
+//				Debug.Log ("auxList.Count = " + auxList.Count);
 				if (isInFront (auxList[i], auxList[first]))
 					first = i;
 			}
@@ -126,9 +129,8 @@ public class GateManagerScript : MonoBehaviour {
 
 	int [] GetPositions()
 	{
-		List<int> positions = new List<int>{ 0, 1, 2, 3 };
-		positions.Sort( (a, b) => { return isInFront(a, b) ? 1 : -1; } );
-		Debug.Log ("sorted positions: 0 = " + positions [0] + "; 1 = " + positions [1] + "; 2 = " + positions [2] + "; 3 = " + positions [3]);
+		//positions.Sort( (a, b) => { return isInFront(a, b) ? 1 : -1; } );
+//		Debug.Log ("sorted positions: 0 = " + positions [0] + "; 1 = " + positions [1] + "; 2 = " + positions [2] + "; 3 = " + positions [3]);
 		return positions.ToArray();
 	}
 
@@ -163,26 +165,26 @@ public class GateManagerScript : MonoBehaviour {
 //		Debug.Log ("totalGatesCrossed for each = " + totalGatesCrossed [first] + " " + totalGatesCrossed [second]);
 		if (first == second)
 			return false;
-		if (totalGatesCrossed [first] != totalGatesCrossed [second]) {
-			Debug.Log ("num of crossed gates is different");
-			Debug.Log ("gatesCrossed for each = " + totalGatesCrossed [first] + " " + totalGatesCrossed [second]);
+//		if (totalGatesCrossed [first] != totalGatesCrossed [second]) {
+//			Debug.Log ("num of crossed gates is different");
+//			Debug.Log ("gatesCrossed for each = " + totalGatesCrossed [first] + " " + totalGatesCrossed [second]);
 			if (totalGatesCrossed [first] > totalGatesCrossed [second]) {
-				Debug.Log (first + " crossed more gates than " + second);
+//				Debug.Log (first + " crossed more gates than " + second);
 				return true;
 			} else {
-				Debug.Log (second + " crossed more gates than " + first);
+//				Debug.Log (second + " crossed more gates than " + first);
 				return false;
 			}
-		} else { //se os gates estao iguais, checa distancia
-			if (distances [first] >= distances [second]) {
-				Debug.Log (second + " is in front of " + first);
-				return true;
-			}
-			else {
-				Debug.Log (first + " is in front of " + second);
-				return false;
-			}
-		}
+//		} else { //se os gates estao iguais, checa distancia
+//			if (distances [first] >= distances [second]) {
+////				Debug.Log (second + " is in front of " + first);
+//				return false;
+//			}
+//			else {
+////				Debug.Log (first + " is in front of " + second);
+//				return true;
+//			}
+//		}
 	}
 
 	private void updatePositionsText(){
@@ -193,6 +195,17 @@ public class GateManagerScript : MonoBehaviour {
 		positionsText.text = aux;
 	}
 
+	private void sortList(){
+		List<int> aux = new List<int>{ totalGatesCrossed[0], totalGatesCrossed[1], totalGatesCrossed[2], totalGatesCrossed[3] };
+		int currentMax = 0;
+		for (int i = 0; i < 4; i++) {
+			currentMax = aux.Max ();
+			positions [aux.IndexOf (currentMax)] = i;
+			aux [aux.IndexOf (currentMax)] = -1;
+		}
+		Debug.Log ("sorted positions: 0 = " + positions [0] + "; 1 = " + positions [1] + "; 2 = " + positions [2] + "; 3 = " + positions [3]);
+//		return positions.ToArray ();
+	}
 
 
 }
