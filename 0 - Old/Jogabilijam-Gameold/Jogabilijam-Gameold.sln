@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jogabilijam-Gameold.Plugins", "Jogabilijam-Gameold.Plugins.csproj", "{40E8362D-D55B-3CD8-FA37-38C8C862CB8A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jogabilijam-Gameold", "Jogabilijam-Gameold.csproj", "{ACC7268B-74C9-AC1C-C6E5-D2D70355796C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jogabilijam-Gameold.Editor", "Jogabilijam-Gameold.Editor.csproj", "{5021D4CE-7F52-746C-E579-BCC4E9E6CA3E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{40E8362D-D55B-3CD8-FA37-38C8C862CB8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40E8362D-D55B-3CD8-FA37-38C8C862CB8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40E8362D-D55B-3CD8-FA37-38C8C862CB8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40E8362D-D55B-3CD8-FA37-38C8C862CB8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACC7268B-74C9-AC1C-C6E5-D2D70355796C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACC7268B-74C9-AC1C-C6E5-D2D70355796C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACC7268B-74C9-AC1C-C6E5-D2D70355796C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACC7268B-74C9-AC1C-C6E5-D2D70355796C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5021D4CE-7F52-746C-E579-BCC4E9E6CA3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5021D4CE-7F52-746C-E579-BCC4E9E6CA3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5021D4CE-7F52-746C-E579-BCC4E9E6CA3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5021D4CE-7F52-746C-E579-BCC4E9E6CA3E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

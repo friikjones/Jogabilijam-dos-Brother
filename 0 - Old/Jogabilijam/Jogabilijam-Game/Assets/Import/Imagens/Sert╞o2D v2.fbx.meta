@@ -1,0 +1,243 @@
+fileFormatVersion: 2
+guid: 35fd2683b5242784090e16fed2d2cd4d
+timeCreated: 1506568922
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: back
+    100002: BackDrop
+    100004: Check
+    100006: Check1
+    100008: Check11
+    100010: Check12
+    100012: Check2
+    100014: Check3
+    100016: Check4
+    100018: Check5
+    100020: Check6
+    100022: Check7
+    100024: Check8
+    100026: Check9
+    100028: Checkpoints
+    100030: Fundo1
+    100032: Grid
+    100034: Igrejinha
+    100036: Igrejinha1
+    100038: Igrejinha2
+    100040: Inicio
+    100042: Linha
+    100044: Parede_Invisivel_Externa
+    100046: Parede_Invisivel_Interna
+    100048: Pedra
+    100050: Pedra1
+    100052: Pedra2
+    100054: Pedras
+    100056: Pista1
+    100058: Ponte
+    100060: Rio
+    100062: Saida1
+    100064: Saida2
+    100066: Saida3
+    100068: Saida4
+    100070: //RootNode
+    400000: back
+    400002: BackDrop
+    400004: Check
+    400006: Check1
+    400008: Check11
+    400010: Check12
+    400012: Check2
+    400014: Check3
+    400016: Check4
+    400018: Check5
+    400020: Check6
+    400022: Check7
+    400024: Check8
+    400026: Check9
+    400028: Checkpoints
+    400030: Fundo1
+    400032: Grid
+    400034: Igrejinha
+    400036: Igrejinha1
+    400038: Igrejinha2
+    400040: Inicio
+    400042: Linha
+    400044: Parede_Invisivel_Externa
+    400046: Parede_Invisivel_Interna
+    400048: Pedra
+    400050: Pedra1
+    400052: Pedra2
+    400054: Pedras
+    400056: Pista1
+    400058: Ponte
+    400060: Rio
+    400062: Saida1
+    400064: Saida2
+    400066: Saida3
+    400068: Saida4
+    400070: //RootNode
+    2300000: BackDrop
+    2300002: Check
+    2300004: Check1
+    2300006: Check11
+    2300008: Check12
+    2300010: Check2
+    2300012: Check3
+    2300014: Check4
+    2300016: Check5
+    2300018: Check6
+    2300020: Check7
+    2300022: Check8
+    2300024: Check9
+    2300026: Fundo1
+    2300028: Igrejinha
+    2300030: Igrejinha1
+    2300032: Igrejinha2
+    2300034: Inicio
+    2300036: Linha
+    2300038: Parede_Invisivel_Externa
+    2300040: Parede_Invisivel_Interna
+    2300042: Pedra
+    2300044: Pedra1
+    2300046: Pedra2
+    2300048: Pista1
+    2300050: Ponte
+    2300052: Rio
+    2300054: Saida1
+    2300056: Saida2
+    2300058: Saida3
+    2300060: Saida4
+    3300000: BackDrop
+    3300002: Check
+    3300004: Check1
+    3300006: Check11
+    3300008: Check12
+    3300010: Check2
+    3300012: Check3
+    3300014: Check4
+    3300016: Check5
+    3300018: Check6
+    3300020: Check7
+    3300022: Check8
+    3300024: Check9
+    3300026: Fundo1
+    3300028: Igrejinha
+    3300030: Igrejinha1
+    3300032: Igrejinha2
+    3300034: Inicio
+    3300036: Linha
+    3300038: Parede_Invisivel_Externa
+    3300040: Parede_Invisivel_Interna
+    3300042: Pedra
+    3300044: Pedra1
+    3300046: Pedra2
+    3300048: Pista1
+    3300050: Ponte
+    3300052: Rio
+    3300054: Saida1
+    3300056: Saida2
+    3300058: Saida3
+    3300060: Saida4
+    4300000: Ponte
+    4300002: BackDrop
+    4300004: Igrejinha
+    4300006: Pedra
+    4300008: Pedra1
+    4300010: Pedra2
+    4300012: Check
+    4300014: Check1
+    4300016: Check2
+    4300018: Check3
+    4300020: Check4
+    4300022: Check5
+    4300024: Check6
+    4300026: Check7
+    4300028: Check8
+    4300030: Check9
+    4300032: Inicio
+    4300034: Check11
+    4300036: Check12
+    4300038: Linha
+    4300040: Saida1
+    4300042: Saida2
+    4300044: Saida3
+    4300046: Saida4
+    4300048: Igrejinha1
+    4300050: Igrejinha2
+    4300052: Pista1
+    4300054: Rio
+    4300056: Parede_Invisivel_Externa
+    4300058: Parede_Invisivel_Interna
+    4300060: Fundo1
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 700
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
